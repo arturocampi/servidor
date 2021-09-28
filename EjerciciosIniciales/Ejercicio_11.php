@@ -18,6 +18,6 @@ $paises = array(
     ),
 );
 echo "<br> Nombre y posición <br>";
-    foreach ($paises as $clave => $index) {
-        echo "$clave : $index <br>";
-    };
+foreach ($paises as $clave => $index) {
+    echo "$clave : $index <br>";
+};
