@@ -9,12 +9,16 @@
 
 <body>
     <?php
-    $equipo = ['Pepe', 'Manolo', 'Pepito', 'Mike', 'Manuel'];
+    $equipo[] = 'Jaimito';
+    $equipo[] = 'Manolo';
+    $equipo[] = 'Paco';
+    $equipo[] = 'Patata';
+    $equipo[] = 'Pepito';
     echo "Nombres <br>";
     foreach ($equipo as $index) {
         echo "$index <br>";
     };
-    echo "<br> Nombres y posición <br>";
+    echo "<br> Nombres y números <br>";
     foreach ($equipo as $clave => $index) {
         echo "$clave : $index <br>";
     };

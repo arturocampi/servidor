@@ -9,12 +9,14 @@
 
 <body>
     <?php
-    $equipo = ['Pepe', 'Manolo', 'Pepito', 'Mike', 'Manuel'];
-    echo "Nombres <br>";
-    foreach ($equipo as $index) {
-        echo "$index <br>";
-    };
-    echo "<br> Nombres y posición <br>";
+    $equipo = array(
+        'base' => 'Jaimito',
+        'escolta' => 'Manolo',
+        'alero' => 'Paco',
+        'alapivot' => 'Patata',
+        'pivot' => 'Pepito'
+    );
+    echo "<br> Nombre y posición <br>";
     foreach ($equipo as $clave => $index) {
         echo "$clave : $index <br>";
     };
