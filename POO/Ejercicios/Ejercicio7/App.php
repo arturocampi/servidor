@@ -2,53 +2,60 @@
 
 class App
 {
-    public function run()
-    {
-        #if (isset($_GET['method'])) {
-        #    $method = $_GET['method'];
-        #} else {
-       #     require('views/index.php');
-        #}
-        
-        if (isset($_GET['fibonacci'])) {
-            $method = $_GET['fibonacci'];
-          } else {
-            $method = 'index';
-          }
-        
-          try {
-            $this->$method();      
-          } catch (Throwable $th) {
-            if (method_exists($this, $method)) {
-              header("HTTP/1.0 500 Internal Server Error");
-              return http_response_code(500);
-              echo "Error en el servidor";
-            } else {
-              header("HTTP/1.0 404 Not Found");
-              echo "No encontrado";      
-            }  
-          } finally {
-            echo "<pre>";
-            print_r($th);
-          }
+  public function run()
+  {
+    if (isset($_GET['method'])) {
+      $method = $_GET['method'];
+    } else {
+      $method = 'index';
     }
 
-    public function index()
-    {
-      // echo "Estamos en el index<br>";
-      include('views/index.php');
+    try {
+      $this->$method();
+    } catch (Throwable $th) {
+      if (method_exists($this, $method)) {
+        header("HTTP/1.0 500 Internal Server Error");
+        return http_response_code(500);
+        echo "Error en el servidor";
+      } else {
+        header("HTTP/1.0 404 Not Found");
+        echo "No encontrado";
+      }
+    } finally {
+      echo "<pre>";
+      print_r($th);
     }
+  }
 
-    public function espartaco()
-    {
-        $a = 0;
-        $b = 1;
-        $c = 0;
-        for ($i = 0; $i < 50; $i++) {
-            $a + $b = $c;
-            echo '$c';
-            $b = $a;
-            $c = $b;
-        }
+  public function index()
+  {
+    // echo "Estamos en el index<br>";
+    include('views/index.php');
+  }
+
+  public function fibonacci()
+  {
+    $a = 0;
+    $b = 1;
+    $c = 0;
+    do {
+      $c = $a + $b;
+      echo $c . "<br>";
+      $a = $b;
+      $b = $c;
+    } while ($c < 999999);
+  }
+
+  public function potencia()
+  {
+    for ($i = 0; $i < 25; $i++) {
+      echo "2^$i = " . pow(2, $i) . "<br>";
     }
+  }
+
+  public function factorial()
+  {
+    $fact = 1;
+    
+  }
 }
