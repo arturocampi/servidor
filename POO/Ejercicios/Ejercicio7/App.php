@@ -55,7 +55,27 @@ class App
 
   public function factorial()
   {
-    $fact = 1;
-    
+    $num = 1;
+    $resultado = 1;
+    $contador = 0;
+    while ($resultado < 100000) {
+      $resultado = $resultado * $num;
+      $contador++;
+      $num++;
+    }
+    echo "El número factorial de " . $contador . " es igual a " . $resultado;
+  }
+
+  public function primo()
+  {
+    $num = 1;
+    $cadenaPrimos = '';
+    for ($i = 2; $i < 5000; $i++) {
+      if ($num % $i == 0) {
+        $cadenaPrimos = $cadenaPrimos . $num . ', ';
+      }
+      $num++;
+    }
+    echo "Los números primos son: <br>" . $cadenaPrimos;
   }
 }
