@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Formulario de Login</h1>
-    <form method="POST" action="../index.php?method=auth">
+    <form method="POST" action="?method=auth">
         <label>Usuario</label><input type="text" value="" name="user"><br>
         <label>Contraseña</label><input type="password" value="" name="password"><br>
         <input type="submit" value="enviar">

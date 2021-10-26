@@ -45,13 +45,30 @@ class App
 
     public function home()
     {
+        if (isset($_COOKIE['list'])) {
+            $lista = json_decode($_COOKIE['list']);
+        }else {
+            $lista = [];
+        }
         include('views/home.php');
     }
 
     public function new()
     {
-        $lista = array($_POST['new']);
+        $new = $_POST['new'];
+        if (isset($_COOKIE['list'])) {
+            $lista = json_decode($_COOKIE['list']);
+        } else {
+            $lista = [];
+        }
+        $lista[] = $new;
         setcookie('list', json_encode($lista), time() + 3600 * 24);
+        header('location:?method=home');
+    }
+
+    public function empty()
+    {
+        setcookie('list', '', time() + 1);
         header('location:?method=home');
     }
 }
