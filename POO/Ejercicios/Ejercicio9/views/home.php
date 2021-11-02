@@ -20,7 +20,7 @@
 <?php
 if (count($lista)) {
     foreach ($lista as $key => $value) {
-        echo "<li>$key: $value</li>";
+        echo "<li>$key: $value <a href='?method=delete&id=$key'>BORRAR</a></li>";
     }
 } else {
     echo '<h3>Tu lista de deseos está vacía, añade algo!</h3>';
@@ -31,4 +31,7 @@ if (count($lista)) {
 <form method="POST" action="?method=new">
     <label>item</label><input type="text" name="new">
     <input type="submit" value="añadir">
+</form>
+<form method="POST action=" ?method="close">
+    <input type="submit" value="Log Out">
 </form>

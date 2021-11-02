@@ -71,4 +71,22 @@ class App
         setcookie('list', '', time() + 1);
         header('location:?method=home');
     }
+
+    public function delete(){
+        if (isset($_COOKIE['list'])) {
+            $lista = json_decode($_COOKIE['list']);
+            $id = $_GET['id'];
+            unset($lista[$id]);
+            setcookie('list', json_encode($lista), time() + 3600 * 24);
+        } 
+        include('views/home.php');
+    }
+    
+    public function close()
+    {
+      setcookie('user', $_POST['user'], time() - 3600 * 24);
+      setcookie('password', $_POST['password'], time() - 3600 * 24);
+      setcookie('list', '', time() + 1);
+      header('location:index.php');
+    }
 }
