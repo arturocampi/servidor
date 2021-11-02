@@ -29,11 +29,11 @@ class App{
     public function home(){
         $dw = 0;
         if(isset($_COOKIE['color'])){
-
+            include('home.php');
         }else{
+            header('location:views/colores.php');
             setcookie('color', $dw, time() + 3600 * 24);
         }
-
         header('location:views/home.php');
     }
 
