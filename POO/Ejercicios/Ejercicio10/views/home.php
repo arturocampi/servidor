@@ -8,5 +8,7 @@
 </head>
 <body style="background-color: <?php $_COOKIE[$color]?> ";>
     <h1>Hola!</h1>
+    <p>Prueba desde el portatil</p>
+
 </body>
 </html>
