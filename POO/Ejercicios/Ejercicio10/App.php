@@ -9,21 +9,12 @@ class App{
         } else {
             $method = 'home';
         }
+        $this->$method();
+    }
 
-        try {
-            $this->$method();
-        } catch (Throwable $th) {
-            if (method_exists($this, $method)) {
-                header("HTTP/1.0 500 Internal Server Error");
-                return http_response_code(500);
-                echo "Error en el servidor";
-            } else {
-                header("HTTP/1.0 404 Not Found");
-                echo "No encontrado";
-            }
-        } finally {
-            echo "<pre>";
-        }
+    public function reload()
+    {
+        header('location:?method=home');
     }
 
     public function home(){
@@ -41,6 +32,6 @@ class App{
     public function cambio(){
         $color = $_GET['color'];
         setcookie('color', $color, time() + 3600 * 24);
-        header('location:?method=home');
+        $this->reload();
     }
 }

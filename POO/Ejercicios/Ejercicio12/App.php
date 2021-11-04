@@ -11,21 +11,12 @@ class App
         } else {
             $method = 'home';
         }
+        $this->$method();
+    }
 
-        try {
-            $this->$method();
-        } catch (Throwable $th) {
-            if (method_exists($this, $method)) {
-                header("HTTP/1.0 500 Internal Server Error");
-                return http_response_code(500);
-                echo "Error en el servidor";
-            } else {
-                header("HTTP/1.0 404 Not Found");
-                echo "No encontrado";
-            }
-        } finally {
-            echo "<pre>";
-        }
+    public function reload()
+    {
+        $this->reload();
     }
 
     public function home()
@@ -46,6 +37,6 @@ class App
     {
         $color = $_GET['color'];
         $_SESSION['color'] = $color;
-        header('location:?method=home');
+        $this->reload();
     }
 }

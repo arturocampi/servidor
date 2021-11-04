@@ -10,21 +10,12 @@ class App
         } else {
             $method = 'login';
         }
+        $this->$method();
+    }
 
-        try {
-            $this->$method();
-        } catch (Throwable $th) {
-            if (method_exists($this, $method)) {
-                header("HTTP/1.0 500 Internal Server Error");
-                return http_response_code(500);
-                echo "Error en el servidor";
-            } else {
-                header("HTTP/1.0 404 Not Found");
-                echo "No encontrado";
-            }
-        } finally {
-            echo "<pre>";
-        }
+    public function reload()
+    {
+        $this->reload();
     }
 
     public function login()
@@ -37,7 +28,7 @@ class App
         $_SESSION['user'] = $_POST['user'];
         $_SESSION['password'] = $_POST['password'];
         if ($_SESSION['user'] == 'arthur' && $_SESSION['password'] == '1234') {
-            header('location:?method=home');
+            $this->reload();
         } else {
             echo "Credenciales incorrectas";
             header('location:views/login.php');
@@ -64,13 +55,13 @@ class App
         }
         $lista[] = $new;
         $_SESSION['list'] = $lista;
-        header('location:?method=home');
+        $this->reload();
     }
 
     public function empty()
     {
         unset($_SESSION['list']);
-        header('location:?method=home');
+        $this->reload();
     }
 
     public function delete()
