@@ -1,9 +1,11 @@
 <?php
 
-class App{
+class App
+{
 
     public function run()
     {
+        session_start();
         if (isset($_GET['method'])) {
             $method = $_GET['method'];
         } else {
@@ -26,21 +28,24 @@ class App{
         }
     }
 
-    public function home(){
-        if(isset($_COOKIE['color'])){
+    public function home()
+    {
+        if (isset($_SESSION['color'])) {
             header('location:views/home.php');
-        }else{
+        } else {
             header('location:?method=colores');
         }
     }
 
-    public function colores(){
+    public function colores()
+    {
         header('location:views/colores.php');
     }
 
-    public function cambio(){
+    public function cambio()
+    {
         $color = $_GET['color'];
-        setcookie('color', $color, time() + 3600 * 24);
+        $_SESSION['color'] = $color;
         header('location:?method=home');
     }
 }
