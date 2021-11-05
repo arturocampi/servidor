@@ -1,5 +1,0 @@
-  //metodo mágico es con dos guiones bajos
-
- public function __toString() {
-        return $this->nombre;
-    }
