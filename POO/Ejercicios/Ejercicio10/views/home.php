@@ -9,7 +9,7 @@
 <body style="background-color: <?= $_COOKIE['color']?> ";>
     <h1>Hola!</h1>
     <?php
-        echo "<li><a href='../?method=colores'>COLORES</a></li>";
+        echo "<li><a href='?method=colores'>COLORES</a></li>";
     ?>
 </body>
 </html>

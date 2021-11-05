@@ -19,14 +19,14 @@ class App{
 
     public function home(){
         if(isset($_COOKIE['color'])){
-            header('location:views/home.php');
+            include('views/home.php');
         }else{
             header('location:?method=colores');
         }
     }
 
     public function colores(){
-        header('location:views/colores.php');
+        include('views/colores.php');
     }
 
     public function cambio(){

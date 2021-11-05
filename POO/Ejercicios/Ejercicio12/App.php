@@ -16,13 +16,13 @@ class App
 
     public function reload()
     {
-        $this->reload();
+        header('location:?method=home');
     }
 
     public function home()
     {
         if (isset($_SESSION['color'])) {
-            header('location:views/home.php');
+            include('views/home.php');
         } else {
             header('location:?method=colores');
         }
@@ -30,13 +30,12 @@ class App
 
     public function colores()
     {
-        header('location:views/colores.php');
+        include('views/colores.php');
     }
 
     public function cambio()
     {
-        $color = $_GET['color'];
-        $_SESSION['color'] = $color;
+        $_SESSION['color'] = $_GET['color'];
         $this->reload();
     }
 }
