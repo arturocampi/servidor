@@ -5,7 +5,6 @@ class App
 
     public function run()
     {
-        session_start();
         if (isset($_GET['method'])) {
             $method = $_GET['method'];
         } else {
