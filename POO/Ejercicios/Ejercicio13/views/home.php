@@ -32,6 +32,6 @@ if (count($_SESSION['list'])) {
     <label>item</label><input type="text" name="new">
     <input type="submit" value="añadir">
 </form>
-<form method="POST action="?method="close">
+<form method="POST action=" ?method="close">
     <input type="submit" value="Log Out">
 </form>

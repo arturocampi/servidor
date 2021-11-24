@@ -9,7 +9,16 @@ class App
         } else {
             $method = 'login';
         }
+<<<<<<< HEAD
             $this->$method();
+=======
+        $this->$method();
+    }
+
+    public function reload()
+    {
+        $this->reload();
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
     }
 
     public function login()
@@ -23,7 +32,7 @@ class App
         $_SESSION['user'] = $_POST['user'];
         $_SESSION['password'] = $_POST['password'];
         if ($_SESSION['user'] == 'arthur' && $_SESSION['password'] == '1234') {
-            header('location:?method=home');
+            $this->reload();
         } else {
             echo "Credenciales incorrectas";
             include('views/login.php');
@@ -65,7 +74,7 @@ class App
     {
         session_start();
         unset($_SESSION['list']);
-        header('location:?method=home');
+        $this->reload();
     }
 
     public function delete()

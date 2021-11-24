@@ -10,6 +10,14 @@ class App{
             $method = 'home';
         }
         $this->$method();
+<<<<<<< HEAD
+=======
+    }
+
+    public function reload()
+    {
+        header('location:?method=home');
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
     }
 
     public function home(){
@@ -27,6 +35,6 @@ class App{
     public function cambio(){
         $color = $_GET['color'];
         setcookie('color', $color, time() + 3600 * 24);
-        header('location:?method=home');
+        $this->reload();
     }
 }
