@@ -11,12 +11,18 @@ class App{
         }
         $this->$method();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
     }
 
     public function reload()
     {
         header('location:?method=home');
+<<<<<<< HEAD
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
+=======
 >>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
     }
 

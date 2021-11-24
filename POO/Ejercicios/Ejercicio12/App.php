@@ -36,9 +36,14 @@ class App
     public function cambio()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         session_start();
         $_SESSION['color'] = $_GET['color'];
         header('location:?method=home');
+=======
+        $_SESSION['color'] = $_GET['color'];
+        $this->reload();
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
 =======
         $_SESSION['color'] = $_GET['color'];
         $this->reload();

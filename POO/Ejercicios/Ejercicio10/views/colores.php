@@ -12,7 +12,11 @@
     <ul>
         <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
         echo "<li><a href='?method=cambio&color=blue'>Azul</a></li>";
+=======
+        echo "<li><a href='?method=cambio&color=blue'>Azúl</a></li>";
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
 =======
         echo "<li><a href='?method=cambio&color=blue'>Azúl</a></li>";
 >>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275

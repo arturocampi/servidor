@@ -6,11 +6,14 @@ class App
     public function run()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     }
 
 =======
+=======
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
         if (isset($_GET['method'])) {
             $method = $_GET['method'];
         } else {
@@ -31,5 +34,8 @@ class App
         session_start();
         $_SESSION['list'];
     }
+<<<<<<< HEAD
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
+=======
 >>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
 }

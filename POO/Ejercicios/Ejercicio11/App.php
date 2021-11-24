@@ -10,14 +10,20 @@ class App
             $method = 'login';
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
             $this->$method();
 =======
+=======
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
         $this->$method();
     }
 
     public function reload()
     {
         $this->reload();
+<<<<<<< HEAD
+>>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
+=======
 >>>>>>> 8712d98ca81dd2acc3eae3ce3685eb57701e7275
     }
 
