@@ -1,0 +1,19 @@
+{
+    "name": "alumno/mvc_06",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\Controllers\\": "app/controllers/",
+            "App\\Models\\": "app/models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "arturocampi",
+            "email": "arturo.herraez.tpz@gmail.com"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "~0.7"
+    }
+}

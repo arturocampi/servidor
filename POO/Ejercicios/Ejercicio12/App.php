@@ -5,7 +5,6 @@ class App
 
     public function run()
     {
-        session_start();
         if (isset($_GET['method'])) {
             $method = $_GET['method'];
         } else {
@@ -30,8 +29,9 @@ class App
 
     public function home()
     {
+        session_start();
         if (isset($_SESSION['color'])) {
-            header('location:views/home.php');
+            include('views/home.php');
         } else {
             header('location:?method=colores');
         }
@@ -39,13 +39,13 @@ class App
 
     public function colores()
     {
-        header('location:views/colores.php');
+        include('views/colores.php');
     }
 
     public function cambio()
     {
-        $color = $_GET['color'];
-        $_SESSION['color'] = $color;
+        session_start();
+        $_SESSION['color'] = $_GET['color'];
         header('location:?method=home');
     }
 }

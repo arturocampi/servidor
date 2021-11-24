@@ -11,11 +11,11 @@
 <body>
     <ul>
         <?php
-        echo "<li><a href='../?method=cambio&color=blue'>Azúl</a></li>";
-        echo "<li><a href='../?method=cambio&color=red'>Rojo</a></li>";
-        echo "<li><a href='../?method=cambio&color=yellow'>Amarillo</a></li>";
-        echo "<li><a href='../?method=cambio&color=green'>Verde</a></li>";
-        echo "<li><a href='../?method=cambio&color=orange'>Naranja</a></li>";
+        echo "<li><a href='?method=cambio&color=blue'>Azul</a></li>";
+        echo "<li><a href='?method=cambio&color=red'>Rojo</a></li>";
+        echo "<li><a href='?method=cambio&color=yellow'>Amarillo</a></li>";
+        echo "<li><a href='?method=cambio&color=green'>Verde</a></li>";
+        echo "<li><a href='?method=cambio&color=orange'>Naranja</a></li>";
         ?>
     </ul>
 </body>
